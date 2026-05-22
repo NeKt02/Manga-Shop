@@ -2,8 +2,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let products = []
     let cart = []
+    const productsGrid = document.getElementById('products-grid')
 
-
+    fetchProducts()
+    loadCart()
+    
     async function fetchProducts() {
         const response = await fetch('products.json')
         const data = await response.json()
@@ -62,6 +65,17 @@ document.addEventListener('DOMContentLoaded', () => {
             cart.push({ ...product, quantity: 1 });
         }
         console.log(cart);
+
+        saveJsonCookies('cart', cart, 3600 * 24 * 7);
     }
-})
+
+    function loadCart() {
+        const savedCart = getJsonCookies('cart');
+        if (savedCart != null) {
+            cart = savedCart;
+            console.log(cart);
+        }
+    }
+
+});   
 
