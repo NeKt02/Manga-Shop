@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "title": "Берсерк. Том 1.",
+        "author": "Кентаро Миура",
+        "price": 950,
+        "image": "img/berserk.png"
+    },
+    {
+        "id": 2,
+        "title": "Берсерк. Том 2.",
+        "author": "Кентаро Миура",
+        "price": 950,
+        "image": "img/berserk.png"
+    },
+    {
+        "id": 3,
+        "title": "Берсерк. Том 3.",
+        "author": "Кентаро Миура",
+        "price": 950,
+        "image": "img/berserk.png"
+    }
+]
