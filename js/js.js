@@ -18,9 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
         productsGrid.innerHTML = '';
 
         products.forEach(product => {
-            const card = document.createElement('product');
-            productsGrid.innerHTML += 'card';
-    });
+            const card = createProductCard(product);
+            productsGrid.innerHTML += card;
+        });
     }
         
     function createProductCard(product) {

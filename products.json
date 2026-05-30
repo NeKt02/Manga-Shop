@@ -19,5 +19,19 @@
         "author": "Кентаро Миура",
         "price": 950,
         "image": "img/berserk.png"
+    },
+    {
+        "id": 4,
+        "title": "Берсерк. Том 4.",
+        "author": "Кентаро Миура",
+        "price": 950,
+        "image": "img/berserk.png"
+    },
+    {
+        "id": 5,
+        "title": "Берсерк. Том 5.",
+        "author": "Кентаро Миура",
+        "price": 950,
+        "image": "img/berserk.png"
     }
 ]
