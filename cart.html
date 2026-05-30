@@ -1,19 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/card.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Itim&family=Unbounded:wght@200..900&display=swap"
-        rel="stylesheet">
-</head>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/card.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Itim&family=Unbounded:wght@200..900&display=swap"
+            rel="stylesheet">
+    </head>
 
 <body>
     <header>
@@ -23,12 +21,6 @@
                 stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
         <h1 class="name">Manga Shop</h1>
-
-         <form id="searchForm" class="form">
-                <input class="search" type="search" placeholder="Пошук" aria-label="Search">
-               <button class="btn-search" type="submit">Знайти</button>
-            </form>
-
         <div class="menu">
             <ul class="nav">
                 <li><a href="index.html">Главная</a></li>
@@ -52,7 +44,7 @@
                 <input type="checkbox" class="input">
                 <span class="slider"></span>
             </label>
-            <a class="cart-btn" href="cart.html"><span class="span">
+            <a class="cart-btn"><span class="span">
                     <p class="p">Корзина</p>
                     <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512" fill="#000" class="cart">
                         <path
@@ -67,18 +59,18 @@
 
     </header>
     <main>
-        <div class="hero-section">
-            <img src="img/banner img 3.png" alt="">
-            <div class="welcome">
-                <h2 class="welcome-title">ВСЯ МАНГА В ОДНОМ МЕСТЕ</h2>
-                <p class="welcome-text">Скидка 10% на первый заказ по промокоду: <span class="start">START</span></p>
-            </div>
-            <img class="img-1" src="img/banner img 1.png" alt="">
-            <img class="img-1" src="img/banner img 2.png" alt="">
-        </div>
-        <div id="products-grid"></div>
-        </div>
 
+        <div class="card-body p-0" id="cartItems">
+            <div id="cart-container"></div>
+            <!-- Товари будуть додані через JS -->
+      </div>    
+      <button class="clear">Clear</button>  
+
+        <form id="orderForm" method="POST">
+        <input type="text" id="userName" placeholder="Ваше ім'я">
+        <input type="tel" id="userPhone" placeholder="Телефон">
+        <button type="submit">Підтвердити </button>
+      </form>
     </main>
     <footer>
         <div class="footer">
@@ -91,7 +83,9 @@
             </div>
         </div>
     </footer>
-    <script src="js/js.js"></script>
+
+    <script src="js/card.js"></script>
+
 </body>
 
 </html>
