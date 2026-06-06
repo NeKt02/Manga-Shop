@@ -4,34 +4,39 @@
         "title": "Берсерк. Том 1.",
         "author": "Кентаро Миура",
         "price": 950,
-        "image": "img/berserk.png"
+        "image": "img/berserk.png",
+        "tags": ["боевик", "приключения", "фэнтези"]
     },
     {
         "id": 2,
         "title": "Берсерк. Том 2.",
         "author": "Кентаро Миура",
         "price": 950,
-        "image": "img/berserk.png"
+        "image": "img/berserk.png",
+        "tags": ["боевик", "приключения", "фэнтези"]
     },
     {
         "id": 3,
         "title": "Берсерк. Том 3.",
         "author": "Кентаро Миура",
         "price": 950,
-        "image": "img/berserk.png"
+        "image": "img/berserk.png",
+        "tags": ["боевик", "приключения", "фэнтези"]
     },
     {
         "id": 4,
         "title": "Берсерк. Том 4.",
         "author": "Кентаро Миура",
         "price": 950,
-        "image": "img/berserk.png"
+        "image": "img/berserk.png",
+        "tags": ["боевик", "приключения", "фэнтези"]
     },
     {
         "id": 5,
         "title": "Берсерк. Том 5.",
         "author": "Кентаро Миура",
         "price": 950,
-        "image": "img/berserk.png"
+        "image": "img/berserk.png",
+        "tags": ["боевик", "приключения", "пригоди"]
     }
 ]
