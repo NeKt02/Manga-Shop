@@ -158,3 +158,111 @@ then set the desired styles for .card-img. */
 .card-btn:active {
   transform: translateY(3px);
 }
+
+#cart-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+}
+
+
+#cartItems .card {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    width: 100% !important;
+    height: auto !important;        
+    padding: 15px !important;
+    gap: 20px !important;
+    border: 2px solid #323232 !important;
+    box-shadow: 4px 4px #323232 !important;
+    border-radius: 6px !important;
+    background: #fff !important;
+}
+
+
+#cartItems .card img {
+    height: 90px !important;
+    width: 65px !important;
+    object-fit: cover !important;
+    border: 2px solid #000;
+    border-radius: 4px;
+}
+
+#cartItems .card-title {
+    font-size: 16px !important;
+    font-weight: bold !important;
+    text-align: left !important;
+    margin: 0 0 5px 0 !important;
+}
+
+#cartItems .card-text {
+    font-size: 14px !important;
+    margin-bottom: 3px !important;
+}
+
+#orderForm {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 400px;
+    margin: 30px auto;
+    font-family: inherit;
+}
+
+#orderForm input {
+    padding: 10px 15px;
+    border: 2px solid #323232;
+    border-radius: 5px;
+    font-size: 15px;
+    background: #fff;
+}
+
+#orderForm input:focus {
+    outline: none;
+    box-shadow: 3px 3px 0px #323232;
+}
+
+#orderForm button[type="submit"] {
+    background: #323232;
+    color: #fff;
+    border: 2px solid #323232;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.1s ease;
+}
+
+#orderForm button[type="submit"]:hover {
+    background: #fff;
+    color: #323232;
+    box-shadow: 3px 3px 0px #323232;
+    transform: translate(-2px, -2px);
+}
+
+.clear {
+    display: block;
+    margin: 10px auto;
+    background: transparent;
+    border: 2px solid #dc3545;
+    color: #dc3545;
+    padding: 6px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.1s;
+}
+
+.clear:hover {
+    background: #dc3545;
+    color: #fff;
+}
+
+

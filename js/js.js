@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }  else {
             cart.forEach((product) => {
                 cartContainer.innerHTML += `
-                  <div class="card border-0 border-bottom rounded-0">
+                  <div class="cart-item border-0 border-bottom rounded-0">
                     <div class="card-body d-flex align-items-center gap-3 p-3">
                       <img src="img/${product.image}" height="80" >
                       <div class="flex-grow-1">

@@ -291,3 +291,24 @@ footer {
     align-items: flex-end;
     gap: 5px;
 }
+
+.search {
+  border-radius: 7px;
+}
+
+.btn-search {
+  font-family: "Itim", cursive;
+  background-color: #000000;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+#card-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
