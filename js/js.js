@@ -66,6 +66,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const response = await fetch('products.json');
         const data = await response.json();
         products = data;
+        displayProducts(products)
+
+        productsGrid.querySelectorAll('.card').forEach(item => {
+        const productId = item.querySelector('.id')
+        item.querySelector('.card-img').addEventListener('click', () => {
+            localStorage.setItem('lastClickedProductId', productId.textContent);
+            window.location.href = 'card.html';
+        })
+    })
         products.forEach(product => {
             if (product.tags) {
                 product.tags.forEach(tag => {
@@ -105,6 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </svg>
                 </button>
             </div>
+            <p class="id" style="display:none;">${product.id}</p>
         </div>`;
     }
 
@@ -212,5 +222,14 @@ function handleTagFilter() {
         const filtered = products.filter(product => product.tags?.includes(tag));
         displayProducts(filtered);
     }
+
+    
+    function redirectToCart() {
+        const productId = productsGrid.querySelector('.card .id').textContent; // Припускаємо, що ID зберігається в прихованому елементі з класом "id"
+        localStorage.setItem('selectedProductId', productId);
+        window.location.href = 'card.html';
+    }
+
+    
 
 });
