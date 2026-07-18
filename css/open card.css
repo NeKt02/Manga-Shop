@@ -27,6 +27,7 @@ body {
     max-width: 1300px;
     margin: 0 auto;
     padding: 40px;
+    width: 100%; /* Защита от вылезания на маленьких экранах */
 }
 
 .product-page {
@@ -39,8 +40,14 @@ body {
     box-shadow: 0 10px 40px rgba(0,0,0,.4);
 }
 
+.product-image {
+    max-width: 100%; /* Контейнер для картинки не шире экрана */
+}
+
 .product-image img {
     width: 340px;
+    max-width: 100%; /* Картинка автоматически сжимается на мобилках */
+    height: auto;
     border-radius: 18px;
     transition: .3s;
     box-shadow: 0 15px 30px rgba(0,0,0,.5);
@@ -52,6 +59,7 @@ body {
 
 .product-info {
     flex: 1;
+    width: 100%; /* Чтобы на мобилках инфо занимала всю ширину */
 }
 
 .product-info h1 {
@@ -107,55 +115,89 @@ body {
     line-height: 1.8;
 }
 
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  color: #fff;
+  text-decoration: none;
+  font-family: system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  background-color: #212529;
+  border: 1px solid #495057;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 20px;
+}
+
+.back-link:hover {
+  background-color: #343a40;
+  border-color: #e53e3e;
+  color: #e53e3e;
+}
+
+.back-link:active {
+  transform: scale(0.98);
+}
+
+/* ==========================================================================
+   ОБНОВЛЕННАЯ АДАПТИВНОСТЬ ДЛЯ ПЛАНШЕТОВ И ТЕЛЕФОНОВ
+   ========================================================================== */
 @media (max-width: 900px) {
+    .card {
+        padding: 20px 15px; /* Уменьшаем внешние отступы, чтобы освободить место */
+    }
+
+    .back-home {
+        margin: 20px 20px; /* Сдвигаем кнопку "Назад" ближе к краю */
+    }
+
     .product-page {
         flex-direction: column;
         align-items: center;
         text-align: center;
+        padding: 25px 20px; /* Компактные отступы внутри блока */
+        gap: 30px;
     }
 
     .product-image img {
-        width: 260px;
+        width: 280px; /* Оптимальный размер обложки для мобилок */
     }
 
     .product-info h1 {
         font-size: 32px;
     }
 
+    .author {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
     .price {
         font-size: 34px;
+        margin-bottom: 20px;
     }
 
     .buy-btn {
-        width: 100%;
+        width: 100%; /* Кнопка растягивается на всю ширину экрана телефона — так удобнее нажимать пальцем */
+        padding: 14px 20px;
+        font-size: 18px;
     }
-}
-.back-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 16px;
-  color: #fff; /* Белый текст, чтобы читался на темном фоне */
-  text-decoration: none;
-  font-family: system-ui, sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  background-color: #212529; /* Темный фон в тон основного контейнера страницы */
-  border: 1px solid #495057; /* Тонкая серая граница, чтобы кнопка не сливалась */
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  margin-bottom: 20px; /* Отступ снизу */
-}
 
-/* Эффект при наведении */
-.back-link:hover {
-  background-color: #343a40; /* Чуть более светлый оттенок при наведении */
-  border-color: #e53e3e;     /* Красная рамка в тон вашей кнопки «Купить» */
-  color: #e53e3e;            /* Текст тоже становится красным */
-}
+    .line {
+        margin: 25px 0; /* Меньше пустых мест между блоками */
+    }
 
-/* Эффект при клике */
-.back-link:active {
-  transform: scale(0.98);
+    .product-info h2 {
+        font-size: 22px;
+    }
+
+    .description {
+        font-size: 15px;
+        line-height: 1.6;
+        text-align: left; /* Описание книги лучше оставить выровненным по левому краю для читаемости */
+    }
 }

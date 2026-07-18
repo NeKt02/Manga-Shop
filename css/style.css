@@ -4,6 +4,7 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
 }
+
 /* From Uiverse.io by andrew-demchenk0 */ 
 .switch {
   font-size: 17px;
@@ -63,42 +64,24 @@ body {
   height: 20px;
 }
 
-/* .switch:hover */.sun svg {
+.sun svg {
   animation: rotate 15s linear infinite;
 }
 
 @keyframes rotate {
- 
-  0% {
-    transform: rotate(0);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
+  0% { transform: rotate(0); }
+  100% { transform: rotate(360deg); }
 }
 
-/* .switch:hover */.moon svg {
+.moon svg {
   animation: tilt 5s linear infinite;
 }
 
 @keyframes tilt {
- 
-  0% {
-    transform: rotate(0deg);
-  }
-
-  25% {
-    transform: rotate(-10deg);
-  }
-
-  75% {
-    transform: rotate(10deg);
-  }
-
-  100% {
-    transform: rotate(0deg);
-  }
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(-10deg); }
+  75% { transform: rotate(10deg); }
+  100% { transform: rotate(0deg); }
 }
 
 .input:checked + .slider {
@@ -185,7 +168,6 @@ body {
   box-shadow: none;
 }
 
-
 header {
     background-color: #ffffff;
     padding: 20px;
@@ -196,12 +178,14 @@ header {
     gap: 20px;
     z-index: 1;
     position: relative;
+    flex-wrap: wrap; /* Разрешаем перенос элементов, если мало места */
 }
 
 .menu {
     display: flex;
     gap: 20px;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .nav {
@@ -210,7 +194,8 @@ header {
     color: #333;
     font-weight: bold;
     gap: 20px;
-    
+    padding: 0;
+    margin: 0;
 }
 
 a {
@@ -222,22 +207,24 @@ a {
     font-family: "Itim", cursive;
     font-weight: 500;
     font-size: 35px;
-   color:#000000;
-  }
-
+    color:#000000;
+}
 
 .hero-section {
     background-color: #fff;
-    height: 200px;
+    min-height: 200px;
     width: 100%;
     display: flex;
     gap: 20px;
     justify-content: space-between;
     align-items: center;
+    overflow: hidden;
 }
 
 .img-1 {
     align-self: flex-end;
+    max-height: 200px; /* Чтобы картинка не вылезала по высоте */
+    object-fit: contain;
 }
 
 .welcome {
@@ -246,10 +233,14 @@ a {
     justify-content: center;
     align-items: center;
     font-family: "Unbounded", sans-serif;
+    flex-grow: 1;
+    padding: 10px;
+    text-align: center;
 }
 
 .welcome-title {
     font-size: 34px;
+    margin-bottom: 10px;
 }
 .welcome-text {
     font-size: 15px;
@@ -275,9 +266,12 @@ footer {
     color: #333;
     font-size: 14px;
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
 }
-
-
 
 .footer-right {
     display: flex;
@@ -289,6 +283,8 @@ footer {
 
 .search {
   border-radius: 7px;
+  padding: 5px;
+  border: 1px solid #ccc;
 }
 
 .btn-search {
@@ -313,4 +309,56 @@ footer {
     gap: 10px;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+/* ==========================================================================
+   МАГИЯ АДАПТИВНОСТИ ДЛЯ ТЕЛЕФОНОВ (Экраны меньше 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+    header {
+        flex-direction: row !important; /* Намертво возвращаем элементы в строку */
+        justify-content: space-between !important;
+        padding: 10px !important;
+    }
+
+    .menu {
+        flex-direction: row !important; /* Кнопки меню тоже держим в ряд */
+        gap: 10px !important;
+    }
+
+    .nav {
+        flex-direction: row !important; /* Ссылки не падают друг под друга */
+        gap: 10px !important;
+    }
+
+    .hero-section {
+        flex-direction: column-reverse; /* На мобилке текст будет над картинкой */
+        height: auto;
+        padding: 20px 10px;
+        justify-content: center;
+    }
+
+    .img-1 {
+        align-self: center;
+        max-height: 150px; /* Уменьшаем картинку на мобилках */
+        margin-top: 15px;
+    }
+
+    .welcome-title {
+        font-size: 24px; /* Просто уменьшаем текст под экран телефона */
+    }
+
+    .welcome-text {
+        font-size: 13px;
+    }
+
+    footer {
+        flex-direction: column; /* Элементы подвала встают в один столбик */
+        text-align: center;
+    }
+
+    .footer-right {
+        align-self: center;
+        align-items: center;
+    }
 }

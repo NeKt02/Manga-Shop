@@ -1,8 +1,3 @@
-/* From Uiverse.io by andrew-demchenk0 */ 
-/* before adding the img to the div with the 
-"card-img" class, remove css styles 
-.card-img .img::before and .card-img .img::after,
-then set the desired styles for .card-img. */
 .card {
   --font-color: #323232;
   --font-color-sub: #666;
@@ -10,6 +5,7 @@ then set the desired styles for .card-img. */
   --main-color: #323232;
   --main-focus: #2d8cf0;
   width: 230px;
+  max-width: 100%; /* Защита от вылезания за края телефона */
   height: 300px;
   background: var(--bg-color);
   border: 2px solid var(--main-color);
@@ -23,16 +19,15 @@ then set the desired styles for .card-img. */
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-
 /* Контейнер для картинки внутри карточки */
 .card-img {
   width: 100%;
-  height: 150px;       /* Задаем фиксированную высоту для блока обложки */
+  height: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;    /* Прячем всё, что выходит за границы */
-  margin-bottom: 10px; /* Отступ между обложкой и заголовком */
+  overflow: hidden;
+  margin-bottom: 10px;
   transition: all 0.5s;
 }
 
@@ -41,55 +36,13 @@ then set the desired styles for .card-img. */
   width: auto !important;
   max-width: 100% !important;
   height: 100% !important;
-  object-fit: contain !important; /* Обложка сохранит свои пропорции и не растянется */
-  border-radius: 4px;            /* Аккуратные скруглённые углы как у книги */
+  object-fit: contain !important;
+  border-radius: 4px;
 }
 
 /* Эффект поднятия картинки при наведении */
 .card-img:hover {
   transform: translateY(-5px);
-}
-
-
-.card-img .img::before {
- /* delete */
-  content: '';
-  position: absolute;
-  width: 65px;
-  height: 110px;
-  margin-left: -32.5px;
-  left: 50%;
-  bottom: -4px;
-  background-repeat: no-repeat;
-  background-image: radial-gradient(ellipse at center,rgba(0,0,0,0.7) 30%,transparent 30%),linear-gradient(to top,transparent 17px,rgba(0,0,0,0.3) 17px,rgba(0,0,0,0.3) 20px,transparent 20px),linear-gradient(to right,black 2px,transparent 2px),linear-gradient(to left,black 2px,transparent 2px),linear-gradient(to top,black 2px,#228b22 2px);
-  background-size: 60% 10%,100% 100%,100% 65%,100% 65%,100% 50%;
-  background-position: center 3px,center bottom,center bottom,center bottom,center bottom;
-  border-radius: 0 0 4px 4px;
-  z-index: 2;
-}
-
-.card-img .img::after {
- /* delete */
-  content: '';
-  position: absolute;
-  box-sizing: border-box;
-  width: 28px;
-  height: 28px;
-  margin-left: -14px;
-  left: 50%;
-  top: -13px;
-  background-repeat: no-repeat;
-  background-image: linear-gradient(80deg,#ffc0cb 45%,transparent 45%),linear-gradient(-175deg,#ffc0cb 45%,transparent 45%),linear-gradient(80deg,rgba(0,0,0,0.2) 51%,rgba(0,0,0,0) 51%),linear-gradient(-175deg,rgba(0,0,0,0.2) 51%,rgba(0,0,0,0) 51%),radial-gradient(circle at center,#ffa6b6 45%,rgba(0,0,0,0.2) 45%,rgba(0,0,0,0.2) 52%,rgba(0,0,0,0) 52%),linear-gradient(45deg,rgba(0,0,0,0) 48%,rgba(0,0,0,0.2) 48%,rgba(0,0,0,0.2) 52%,rgba(0,0,0,0) 52%),linear-gradient(65deg,rgba(0,0,0,0) 48%,rgba(0,0,0,0.2) 48%,rgba(0,0,0,0.2) 52%,rgba(0,0,0,0) 52%),linear-gradient(22deg,rgba(0,0,0,0) 48%,rgba(0,0,0,0.2) 48%,rgba(0,0,0,0.2) 54%,rgba(0,0,0,0) 54%);
-  background-size: 100% 100%,100% 100%,100% 100%,100% 100%,100% 100%,100% 75%,100% 95%,100% 60%;
-  background-position: center center;
-  border-top-left-radius: 120px;
-  border-top-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 70px;
-  border-top: 2px solid black;
-  border-left: 2px solid black;
-  transform: rotate(45deg);
-  z-index: 1;
 }
 
 .card-title {
@@ -146,10 +99,6 @@ then set the desired styles for .card-img. */
   transition: all 0.3s;
 }
 
-.card-img:hover {
-  transform: translateY(-3px);
-}
-
 .card-btn:hover {
   border: 2px solid var(--main-focus);
 }
@@ -163,107 +112,135 @@ then set the desired styles for .card-img. */
 }
 
 #cart-container {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto 20px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 20px auto;
+  padding: 0 15px; /* Боковые отступы на мобилках для всей корзины */
 }
-
 
 #cartItems .card {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: flex-start !important;
-    width: 100% !important;
-    height: auto !important;        
-    padding: 15px !important;
-    gap: 20px !important;
-    border: 2px solid #323232 !important;
-    box-shadow: 4px 4px #323232 !important;
-    border-radius: 6px !important;
-    background: #fff !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  width: 100% !important;
+  height: auto !important;
+  padding: 15px !important;
+  gap: 20px !important;
+  border: 2px solid #323232 !important;
+  box-shadow: 4px 4px #323232 !important;
+  border-radius: 6px !important;
+  background: #fff !important;
 }
 
-
 #cartItems .card img {
-    height: 90px !important;
-    width: 65px !important;
-    object-fit: cover !important;
-    border: 2px solid #000;
-    border-radius: 4px;
+  height: 90px !important;
+  width: 65px !important;
+  object-fit: cover !important;
+  border: 2px solid #000;
+  border-radius: 4px;
+  flex-shrink: 0; /* Чтобы картинка не сжималась в микроскопическую */
 }
 
 #cartItems .card-title {
-    font-size: 16px !important;
-    font-weight: bold !important;
-    text-align: left !important;
-    margin: 0 0 5px 0 !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+  text-align: left !important;
+  margin: 0 0 5px 0 !important;
 }
 
 #cartItems .card-text {
-    font-size: 14px !important;
-    margin-bottom: 3px !important;
+  font-size: 14px !important;
+  margin-bottom: 3px !important;
 }
 
 #orderForm {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    max-width: 400px;
-    margin: 30px auto;
-    font-family: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 400px;
+  margin: 30px auto;
+  padding: 0 15px; /* Чтобы форма не липла к краям экрана смартфона */
+  font-family: inherit;
 }
 
 #orderForm input {
-    padding: 10px 15px;
-    border: 2px solid #323232;
-    border-radius: 5px;
-    font-size: 15px;
-    background: #fff;
+  padding: 10px 15px;
+  border: 2px solid #323232;
+  border-radius: 5px;
+  font-size: 15px;
+  background: #fff;
+  width: 100%; /* Инпуты занимают всю ширину формы */
 }
 
 #orderForm input:focus {
-    outline: none;
-    box-shadow: 3px 3px 0px #323232;
+  outline: none;
+  box-shadow: 3px 3px 0px #323232;
 }
 
 #orderForm button[type="submit"] {
-    background: #323232;
-    color: #fff;
-    border: 2px solid #323232;
-    padding: 12px;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.1s ease;
+  background: #323232;
+  color: #fff;
+  border: 2px solid #323232;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  width: 100%;
 }
 
 #orderForm button[type="submit"]:hover {
-    background: #fff;
-    color: #323232;
-    box-shadow: 3px 3px 0px #323232;
-    transform: translate(-2px, -2px);
+  background: #fff;
+  color: #323232;
+  box-shadow: 3px 3px 0px #323232;
+  transform: translate(-2px, -2px);
 }
 
 .clear {
-    display: block;
-    margin: 10px auto;
-    background: transparent;
-    border: 2px solid #dc3545;
-    color: #dc3545;
-    padding: 6px 15px;
-    font-size: 14px;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.1s;
+  display: block;
+  margin: 10px auto;
+  background: transparent;
+  border: 2px solid #dc3545;
+  color: #dc3545;
+  padding: 6px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.1s;
 }
 
 .clear:hover {
-    background: #dc3545;
-    color: #fff;
+  background: #dc3545;
+  color: #fff;
+}
+
+/* ==========================================================================
+   АДАПТИВНОСТЬ ДЛЯ СМАРТФОНОВ (Экраны меньше 576px)
+   ========================================================================== */
+@media (max-width: 576px) {
+  /* Перестраиваем карточки товаров в корзине в вертикальный вид */
+  #cartItems .card {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 20px !important;
+    gap: 15px !important;
+  }
+
+  #cartItems .card-title {
+    text-align: center !important;
+  }
+  
+  /* Карточки товаров на главной странице делаем чуть шире для удобства */
+  .card {
+    width: 100%;
+    max-width: 280px; 
+  }
 }
