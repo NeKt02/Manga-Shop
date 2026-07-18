@@ -6,6 +6,45 @@ async function loadCartByID(productId) {
     return product
 }
 
+let cart = [];
+function getJsonCookie(cookieName) {
+        const allCookies = document.cookie.split('; ');
+        const targetCookie = allCookies.find(row => row.startsWith(cookieName + '='));
+        if (targetCookie) {
+            const encodedData = targetCookie.split('=')[1];
+            return JSON.parse(decodeURIComponent(encodedData));
+        }
+        return null;
+    }
+
+    function saveJsonCookie(cookieName, data, seconds) {
+        const jsonString = JSON.stringify(data);
+        const safeString = encodeURIComponent(jsonString);
+        document.cookie = `${cookieName}=${safeString}; max-age=${seconds}; path=/`;
+    }
+
+    function loadCart() {
+        const savedCart = getJsonCookie('cart');
+        if (savedCart != null) {
+            cart = savedCart;
+            console.log(cart);
+        }
+    }
+
+    window.addToCart = function (productId) {
+        const product = products.find(p => p.id === productId);
+
+        if (!product) return;
+        const cartItem = cart.find(item => item?.id === productId);
+        if (cartItem) {
+            cartItem.quantity += 1;
+        } else {
+            cart.push({ ...product, quantity: 1 });
+        }
+        console.log(cart);
+        saveJsonCookie('cart', cart, 3600 * 24 * 7);
+        console.log('Product added to cart:', product.title);
+    };
 
 document.addEventListener('DOMContentLoaded', async () => {
     const savedId = +localStorage.getItem('lastClickedProductId');
@@ -28,9 +67,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         <p class="author">${product.author}</p>
 
-        <div class="price">${product.price}$</div>
+        <div class="price">${product.price} грн</div>
 
-        <button class="buy-btn">
+        <button class="buy-btn" onclick="addToCart(${product.id})">
             🛒 Купить
         </button>
 
@@ -50,4 +89,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         displayProductDetails(await loadCartByID(savedId));
     }
+    
+
+    
+   
 });

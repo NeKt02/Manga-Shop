@@ -1,8 +1,64 @@
 <head>
     <link rel="stylesheet" href="css/open card.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&family=Unbounded:wght@200..900&display=swap"
+        rel="stylesheet">
 </head>
 <body>
-    
+    <header>
+        <svg width="70" height="58" viewBox="0 0 70 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M53.8877 22.0003L46.3319 1.00027M16.1088 22.0003L23.6646 1.00027M27.4424 36.0003C27.4424 37.8568 28.2385 39.6373 29.6555 40.95C31.0725 42.2628 32.9943 43.0003 34.9982 43.0003C37.0021 43.0003 38.924 42.2628 40.341 40.95C41.7579 39.6373 42.554 37.8568 42.554 36.0003C42.554 34.1438 41.7579 32.3633 40.341 31.0505C38.924 29.7378 37.0021 29.0003 34.9982 29.0003C32.9943 29.0003 31.0725 29.7378 29.6555 31.0505C28.2385 32.3633 27.4424 34.1438 27.4424 36.0003ZM8.55668 15.0003H61.4433C62.5327 15.0002 63.6093 15.2183 64.5992 15.6397C65.5891 16.0612 66.4689 16.6759 67.1784 17.4419C67.8878 18.2078 68.41 19.1069 68.7093 20.0773C69.0086 21.0478 69.0778 22.0667 68.9122 23.0643L64.171 48.0963C63.7594 50.5758 62.4031 52.8369 60.3477 54.4702C58.2923 56.1035 55.6736 57.001 52.9657 57.0003H17.0305C14.3232 57.0002 11.7055 56.1023 9.65087 54.4691C7.59626 52.8358 6.24054 50.5752 5.82904 48.0963L1.08779 23.0643C0.922203 22.0667 0.991415 21.0478 1.29069 20.0773C1.58996 19.1069 2.11221 18.2078 2.82164 17.4419C3.53107 16.6759 4.41089 16.0612 5.40079 15.6397C6.39069 15.2183 7.46726 15.0002 8.55668 15.0003Z"
+                stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <h1 class="name">Manga Shop</h1>
+
+         <form id="searchForm" class="form">
+                <input class="search" type="search" placeholder="Пошук" aria-label="Search">
+               <button class="btn-search" type="submit">Знайти</button>
+            </form>
+
+        <div class="menu">
+            <ul class="nav">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="#">Услуги</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <label class="switch">
+                <span class="sun"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <g fill="#ffd43b">
+                            <circle r="5" cy="12" cx="12"></circle>
+                            <path
+                                d="m21 13h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm-17 0h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm13.66-5.66a1 1 0 0 1 -.66-.29 1 1 0 0 1 0-1.41l.71-.71a1 1 0 1 1 1.41 1.41l-.71.71a1 1 0 0 1 -.75.29zm-12.02 12.02a1 1 0 0 1 -.71-.29 1 1 0 0 1 0-1.41l.71-.66a1 1 0 0 1 1.41 1.41l-.71.71a1 1 0 0 1 -.7.24zm6.36-14.36a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm0 17a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm-5.66-14.66a1 1 0 0 1 -.7-.29l-.71-.71a1 1 0 0 1 1.41-1.41l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.29zm12.02 12.02a1 1 0 0 1 -.7-.29l-.66-.71a1 1 0 0 1 1.36-1.36l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.24z">
+                            </path>
+                        </g>
+                    </svg></span>
+                <span class="moon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                        <path
+                            d="m223.5 32c-123.5 0-223.5 100.3-223.5 224s100 224 223.5 224c60.6 0 115.5-24.2 155.8-63.4 5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6-96.9 0-175.5-78.8-175.5-176 0-65.8 36-123.1 89.3-153.3 6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z">
+                        </path>
+                    </svg></span>
+                <input type="checkbox" class="input">
+                <span class="slider"></span>
+            </label>
+            <a class="cart-btn" href="cart.html"><span class="span">
+                    <p class="p">Корзина</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512" fill="#000" class="cart">
+                        <path
+                            d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z">
+                        </path>
+                    </svg>
+                </span></a>
+
+        </div>
+
+
+
+    </header>
     <div class="card"></div>
     <script src="js/card.js"></script>
 

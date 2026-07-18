@@ -113,83 +113,77 @@ body {
   transform: translateX(30px);
 }
 
+/* From Uiverse.io by cybrejon */ 
+.korzina {
+  color: rgba(255, 255, 255, 0.692);
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.397);
+  background: rgba(255, 255, 255, 0.068);
+  overflow: hidden;
+  font-size: 0.9rem;
+  font-weight: 600;
+  gap: 8px;
+  border-radius: 5px;
+  margin: 0 5px;
+  transition: 0.2s;
+  border: 1px solid transparent;
+}
+
+.korzina:hover {
+  border-color: rgba(255, 255, 255, 0.623);
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.144),
+    rgba(255, 255, 255, 0.247),
+    rgba(255, 255, 255, 0.39)
+  );
+  box-shadow: 0 6px rgba(255, 255, 255, 0.623);
+  transform: translateY(-6px);
+}
+
+.korzina:active {
+  transform: translateY(2px);
+  box-shadow: none;
+}
 
 /* From Uiverse.io by Muhammad-Usman-911 */ 
 .cart-btn {
-  font-family: monospace;
-  font-weight: bolder;
-  display: block;
-  cursor: pointer;
-  color: #000;
-  margin: 0 auto;
-  position: relative;
-  text-decoration: none;
-  font-weight: 600;
-  height: 50px;
-  border-radius: 6px;
-  overflow: hidden;
-  padding: 3px;
-  width: 100px;
-  isolation: isolate;
-  transform: scale(0.85);
-}
-
-.cart-btn::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 420%;
-  height: 120%;
-  background: linear-gradient(
-    115deg,
-    #628fbc,
-    hsl(0, 93%, 73%),
-    #f032a7,
-    #329af0,
-    #f032a7
-  );
-  background-size: 25% 100%;
-  animation: border-animation 0.75s linear infinite;
-  animation-play-state: paused;
-  translate: -5% 0%;
-  transition: translate 0.25s ease-out;
-}
-
-.cart-btn:hover::before {
-  animation-play-state: running;
-  transition-duration: 0.75s;
-  translate: 0% 0%;
-}
-
-@keyframes border-animation {
-  to {
-    transform: translateX(-25%);
-  }
-}
-
-.cart-btn span {
-  position: relative;
-  display: block;
-  padding: 1rem 1.5rem;
-  font-size: 1.1rem;
-  background: #fff;
-  border-radius: 3px;
-  height: 100%;
-}
-
-.cart-btn .span {
+  color: rgba(205, 205, 205, 0.692);
+  padding: 10px 15px;
   display: flex;
-  flex-direction: row;
-  justify-content: start;
+  justify-content: space-between;
   align-items: center;
-  gap: 10px;
+  text-shadow: 0 0 20px rgba(189, 189, 189, 0.397);
+  background: rgba(145, 145, 145, 0.068);
+  overflow: hidden;
+  font-size: 0.9rem;
+  font-weight: 600;
+  gap: 8px;
+  border-radius: 5px;
+  margin: 0 5px;
+  transition: 0.2s;
+  border: 1px solid transparent;
 }
 
-.cart-btn.p {
-  margin: 0;
+.cart-btn:hover {
+  border-color: rgba(173, 173, 173, 0.623);
+  background: linear-gradient(
+    to bottom,
+    rgba(200, 200, 200, 0.144),
+    rgba(185, 185, 185, 0.247),
+    rgba(133, 133, 133, 0.39)
+  );
+  box-shadow: 0 6px rgba(145, 145, 145, 0.623);
+  transform: translateY(-6px);
 }
 
+.cart-btn:active {
+  transform: translateY(2px);
+  box-shadow: none;
+}
 
 
 header {
@@ -228,7 +222,8 @@ a {
     font-family: "Itim", cursive;
     font-weight: 500;
     font-size: 35px;
-}
+   color:#000000;
+  }
 
 
 .hero-section {
