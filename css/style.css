@@ -212,19 +212,13 @@ a {
 
 .hero-section {
     background-color: #fff;
-    min-height: 200px;
+    height: 200px;
     width: 100%;
     display: flex;
-    gap: 20px;
-    justify-content: space-between;
+    justify-content: center; /* Текст центрируется железно */
     align-items: center;
-    overflow: hidden;
-}
-
-.img-1 {
-    align-self: flex-end;
-    max-height: 200px; /* Чтобы картинка не вылезала по высоте */
-    object-fit: contain;
+    position: relative; /* База для абсолютного позиционирования картинок */
+    overflow: hidden; /* Чтобы ветки не вылезали за границы баннера */
 }
 
 .welcome {
@@ -233,9 +227,26 @@ a {
     justify-content: center;
     align-items: center;
     font-family: "Unbounded", sans-serif;
-    flex-grow: 1;
-    padding: 10px;
     text-align: center;
+    z-index: 2; /* Текст всегда поверх картинок */
+}
+
+.hero-img-left {
+    position: absolute;
+    left: 0; /* Прижимаем строго к левому краю */
+    bottom: 0;
+    max-height: 200px;
+    object-fit: contain;
+    z-index: 1;
+}
+
+.hero-img-right {
+    position: absolute;
+    right: 0; /* Прижимаем строго к правому краю */
+    bottom: 0;
+    max-height: 200px;
+    object-fit: contain;
+    z-index: 1;
 }
 
 .welcome-title {
